@@ -1,12 +1,13 @@
 import ConditionDetail from './ConditionDetail';
 
-type PageProps = {
+interface PageProps {
   params: {
     id: string;
   };
-};
+}
 
-export async function generateStaticParams() {
+// generateStaticParams helps statically generate dynamic routes
+export function generateStaticParams() {
   return [
     { id: 'depression' },
     { id: 'anxiety' },
@@ -21,6 +22,7 @@ export async function generateStaticParams() {
   ];
 }
 
-export default async function ConditionPage({ params }: PageProps) {
+// The page function can be async or sync — it doesn't affect type checking
+export default function ConditionPage({ params }: PageProps) {
   return <ConditionDetail conditionId={params.id} />;
 }
