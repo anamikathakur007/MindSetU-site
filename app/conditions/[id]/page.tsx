@@ -1,3 +1,4 @@
+// TEMP: Force redeploy for Vercel build fix
 import ConditionDetail from './ConditionDetail';
 
 interface PageProps {
