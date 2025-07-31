@@ -1,5 +1,11 @@
 import ConditionDetail from './ConditionDetail';
 
+type PageProps = {
+  params: {
+    id: string;
+  };
+};
+
 export async function generateStaticParams() {
   return [
     { id: 'depression' },
@@ -15,6 +21,6 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function ConditionPage({ params }: { params: { id: string } }) {
+export default async function ConditionPage({ params }: PageProps) {
   return <ConditionDetail conditionId={params.id} />;
 }
